@@ -1,6 +1,6 @@
 name: CreeperMathAttack
 version: 1.0.0
-description: A simple demo game for STEM exCEL
+description: A simple demo game for STEM exCEL.
 author: recode404
 website: http://recode404.com
 main: creepermathattack.Main
