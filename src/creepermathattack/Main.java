@@ -13,7 +13,7 @@ public class Main extends JavaPlugin {
 
     private static JavaPlugin instance;
 
-    public static JavaPlugin getInstance() {
+    static JavaPlugin getInstance() {
         return instance;
     }
 

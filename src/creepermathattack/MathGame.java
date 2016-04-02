@@ -5,7 +5,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitTask;
 import tasks.CountDownTask;
 import tasks.MathGameTask;
 
@@ -18,7 +17,7 @@ import java.util.Random;
  */
 public class MathGame {
 
-    public static ArrayList<String> currAns;
+    private static ArrayList<String> currAns;
     private static int score, difficulty;
     private static HashMap<String, String> probs;
     private Player player;
@@ -30,8 +29,8 @@ public class MathGame {
         this.difficulty = difficulty;
         this.time = time;
         score = 0;
-        probs = new HashMap<String, String>();
-        currAns = new ArrayList<String>();
+        probs = new HashMap<>();
+        currAns = new ArrayList<>();
     }
 
     //gets a random problem that doesn't exist from given problem set and adds it to current problems
@@ -101,7 +100,7 @@ public class MathGame {
         new CountDownTask(Main.getInstance(), player, 5).runTaskTimer(Main.getInstance(), 100, 20);
 
         //start game for time seconds 3 seconds after countdown stops
-        BukkitTask mgt = new MathGameTask(Main.getInstance(), player, difficulty, time).runTaskTimer(Main.getInstance(), 260, 20);
+        new MathGameTask(Main.getInstance(), player, difficulty, time).runTaskTimer(Main.getInstance(), 260, 20);
     }
 
     //easy math problems (difficulty=0)
