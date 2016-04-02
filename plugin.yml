@@ -1,11 +1,9 @@
-name: StemGameDemo
+name: CreeperMathAttack
 version: 1.0.0
-description: Demo for Stem Minecraft Server
+description: A simple demo game for STEM exCEL
 author: recode404
-authors: [Cogito, verrier, EvilSeph]
 website: http://recode404.com
-
-main: stemgamedemo.Main
+main: creepermathattack.Main
 
 commands:
   play:
