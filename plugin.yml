@@ -1,0 +1,12 @@
+name: StemGameDemo
+version: 1.0.0
+description: Demo for Stem Minecraft Server
+author: recode404
+authors: [Cogito, verrier, EvilSeph]
+website: http://recode404.com
+
+main: stemgamedemo.Main
+
+commands:
+  play:
+    description: Starts the game.
