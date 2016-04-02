@@ -14,7 +14,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 /**
- * Created by Taylor on 3/31/16.
+ * Sets up world for player on join and gives player information about game
  */
 public class EventPlayerJoin implements Listener {
 

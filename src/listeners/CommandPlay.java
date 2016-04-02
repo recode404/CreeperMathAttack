@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 /**
- * Created by Taylor on 3/31/16.
+ * Handles play command by setting difficulty(0-2) and time(30-180)
  */
 public class CommandPlay implements CommandExecutor {
 

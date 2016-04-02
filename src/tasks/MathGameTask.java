@@ -1,16 +1,16 @@
 package tasks;
 
+import creepermathattack.MathGame;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
-import stemgamedemo.MathGame;
 
 import java.util.Random;
 
 /**
- * Created by Taylor on 3/31/16.
+ * Counts down timer and spawns mobs at set interval(spawnTime)
  */
 public class MathGameTask extends BukkitRunnable {
     private final JavaPlugin plugin;
@@ -45,7 +45,7 @@ public class MathGameTask extends BukkitRunnable {
         if (timer == 30)
             player.sendMessage(ChatColor.RED + "30 seconds remaining!");
 
-            //5 second warning
+        //5 second warning
         else if (timer == 5)
             player.sendMessage(ChatColor.RED + "5 seconds remaining!");
 

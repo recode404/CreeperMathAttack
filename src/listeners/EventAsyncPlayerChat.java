@@ -1,14 +1,14 @@
 package listeners;
 
+import creepermathattack.MathGame;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import stemgamedemo.MathGame;
 
 /**
- * Created by Taylor on 3/31/16.
+ * Listeners for player's answer when they are playing
  */
 public class EventAsyncPlayerChat implements Listener {
 

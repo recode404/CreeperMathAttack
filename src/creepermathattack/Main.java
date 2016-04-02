@@ -7,7 +7,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Created by Taylor on 3/31/16.
+ * THIS IS A DEMO GAME ONLY. This plugin must be used with world.zip as the world file to work correctly.
  */
 public class Main extends JavaPlugin {
 

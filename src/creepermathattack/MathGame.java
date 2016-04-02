@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 /**
- * Created by Taylor on 3/31/16.
+ * Main source for the game that handles the problems, difficulty, and score tracking.
  */
 public class MathGame {
 

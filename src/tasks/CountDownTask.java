@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 /**
- * Created by Taylor on 3/31/16.
+ * A simple count down that counts down before the game starts.
  */
 public class CountDownTask extends BukkitRunnable {
 
