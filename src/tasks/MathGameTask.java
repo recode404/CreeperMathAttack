@@ -45,7 +45,7 @@ public class MathGameTask extends BukkitRunnable {
         if (timer == 30)
             player.sendMessage(ChatColor.RED + "30 seconds remaining!");
 
-        //5 second warning
+            //5 second warning
         else if (timer == 5)
             player.sendMessage(ChatColor.RED + "5 seconds remaining!");
 

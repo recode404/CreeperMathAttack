@@ -38,7 +38,7 @@ public class CommandPlay implements CommandExecutor {
         if (args.length > 1) {
             time = Integer.parseInt(args[1]);
             if (time < 30 || time > 180) {
-                player.sendMessage(ChatColor.RED + "Invalid time. time must be between 30 and 180.");
+                player.sendMessage(ChatColor.RED + "Invalid time. Time must be between 30 and 180.");
                 return false;
             }
         }
