@@ -25,7 +25,6 @@ public class EventPlayerJoin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         //setup login
         player = event.getPlayer();
-        Bukkit.getScheduler().cancelAllTasks();
         event.setJoinMessage("");
 
         //set player login defaults
@@ -41,7 +40,7 @@ public class EventPlayerJoin implements Listener {
 
         //send login messages
         player.sendMessage(ChatColor.YELLOW + "This server is for STEM exCEL demo purposes.");
-        player.sendMessage(ChatColor.YELLOW + "Type /play [difficulty (0-2)] [time (0-180)] to start the game.");
+        player.sendMessage(ChatColor.YELLOW + "Type /play [difficulty (0-2)] [time (30-180)] to start the game.");
     }
 
 }

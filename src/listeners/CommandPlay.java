@@ -13,11 +13,14 @@ import org.bukkit.entity.Player;
 public class CommandPlay implements CommandExecutor {
 
     private Player player;
-    private int time = 60, difficulty = 0;
+    private int difficulty, time;
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
+        //set defaults
         player = (Player) sender;
+        difficulty = 0;
+        time = 60;
 
         //player already in game
         if (player.getLevel() == 1) {
@@ -25,7 +28,7 @@ public class CommandPlay implements CommandExecutor {
             return false;
         }
 
-        //difficulty error
+        //difficulty check
         if (args.length > 0) {
             difficulty = Integer.parseInt(args[0]);
             if (difficulty != 0 && difficulty != 1 && difficulty != 2) {
@@ -34,7 +37,7 @@ public class CommandPlay implements CommandExecutor {
             }
         }
 
-        //time error
+        //time check
         if (args.length > 1) {
             time = Integer.parseInt(args[1]);
             if (time < 30 || time > 180) {

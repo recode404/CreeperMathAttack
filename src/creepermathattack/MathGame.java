@@ -21,7 +21,7 @@ public class MathGame {
     private static int score, difficulty;
     private static HashMap<String, String> probs;
     private Player player;
-    private int time;
+    private int time, problemNum;
     private Location gameStartLocation = Bukkit.getWorld("world").getSpawnLocation();
 
     public MathGame(Player player, int difficulty, int time) {
@@ -35,14 +35,20 @@ public class MathGame {
 
     //gets a random problem that doesn't exist from given problem set and adds it to current problems
     public static String getProb() {
+        //fail safe
+        int count = 0;
+
         Object[] ss = probs.keySet().toArray();
         Object[] ps = probs.values().toArray();
         int r = new Random().nextInt(ps.length);
 
         Object p = ps[r];
         while (currAns.contains(ss[r].toString())) {
+            if(count > 50)
+                break;
             r = new Random().nextInt(ps.length);
             p = ps[r];
+            count++;
         }
 
         currAns.add(ss[r].toString());

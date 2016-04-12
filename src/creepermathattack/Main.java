@@ -8,7 +8,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * THIS IS A DEMO GAME ONLY. This plugin must be used with world.zip as the world file to work correctly.
- * HELLO TYLER
  */
 public class Main extends JavaPlugin {
 

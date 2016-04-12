@@ -13,7 +13,6 @@ public class CountDownTask extends BukkitRunnable {
 
     private final JavaPlugin plugin;
     private final Player player;
-
     private int counter;
 
     public CountDownTask(JavaPlugin plugin, Player player, int counter) {

@@ -13,22 +13,26 @@ import java.util.Random;
  * Counts down timer and spawns mobs at set interval(spawnTime)
  */
 public class MathGameTask extends BukkitRunnable {
+
     private final JavaPlugin plugin;
     private final Player player;
-    private int timer, spawnTime = 5, difficulty = 0;
+    private int time, spawnTime, difficulty, x, y, z;
+    private Location loc;
+    private String name;
 
-    public MathGameTask(JavaPlugin plugin, Player player, int difficulty, int timer) {
+    public MathGameTask(JavaPlugin plugin, Player player, int difficulty, int time) {
         this.plugin = plugin;
         this.player = player;
         this.difficulty = difficulty;
-        this.timer = timer;
+        this.time = 10;
+        spawnTime = 5;
     }
 
     @Override
     public void run() {
 
         //once timer is up game ends
-        if (timer < 1) {
+        if (time < 1) {
             player.sendMessage(ChatColor.RED + "Game Over!");
             player.sendMessage(ChatColor.GREEN + "Final Score: " + MathGame.getScore());
 
@@ -38,29 +42,29 @@ public class MathGameTask extends BukkitRunnable {
         }
 
         //spawns mobs every spawnTime intervals
-        else if (timer % spawnTime == 0)
+        else if (time % spawnTime == 0)
             spawnMobs();
 
         //30 second warning
-        if (timer == 30)
+        if (time == 30)
             player.sendMessage(ChatColor.RED + "30 seconds remaining!");
 
-            //5 second warning
-        else if (timer == 5)
+        //5 second warning
+        else if (time == 5)
             player.sendMessage(ChatColor.RED + "5 seconds remaining!");
 
-        //1 second pass and reset food level
-        timer--;
+        //1 second pass
+        time--;
     }
 
     private void spawnMobs() {
-        Location loc = player.getLocation();
-        String name = MathGame.getProb();
+        loc = player.getLocation();
+        name = MathGame.getProb();
 
         //sets random locations between 0-20 for X and Z
-        int x = new Random().nextInt(20);
-        int z = new Random().nextInt(20);
-        int y = loc.getBlockY();
+        x = new Random().nextInt(20);
+        z = new Random().nextInt(20);
+        y = loc.getBlockY();
 
         //spawn creeper riding invisible chicken with name as math problem
         plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(),
