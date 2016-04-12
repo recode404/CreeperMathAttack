@@ -32,7 +32,7 @@ public class EventAsyncPlayerChat implements Listener {
 
         String name = MathGame.tryRemoveProb(text);
 
-        //player enters correct answer
+        //player enters correct answer, so add correct point and remove creeper
         if (name != null) {
             MathGame.addPoint();
             player.getWorld().getEntities().stream().filter
