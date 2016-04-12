@@ -46,7 +46,7 @@ public class CommandPlay implements CommandExecutor {
             }
         }
 
-        //start game and set player to playing
+        //start game and set player
         player.setLevel(1);
         new MathGame(player, difficulty, time).start();
         return true;
