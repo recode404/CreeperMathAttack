@@ -21,13 +21,11 @@ public class MathGame {
     private static int score, difficulty;
     private static HashMap<String, String> probs;
     private Player player;
-    private int time, problemNum;
     private Location gameStartLocation = Bukkit.getWorld("world").getSpawnLocation();
 
-    public MathGame(Player player, int difficulty, int time) {
+    public MathGame(Player player, int difficulty) {
         this.player = player;
         this.difficulty = difficulty;
-        this.time = time;
         score = 0;
         probs = new HashMap<>();
         currAns = new ArrayList<>();
@@ -106,7 +104,7 @@ public class MathGame {
         new CountDownTask(Main.getInstance(), player, 5).runTaskTimer(Main.getInstance(), 100, 20);
 
         //start game for time seconds 3 seconds after countdown stops
-        new MathGameTask(Main.getInstance(), player, difficulty, time).runTaskTimer(Main.getInstance(), 260, 20);
+        new MathGameTask(Main.getInstance(), player, difficulty).runTaskTimer(Main.getInstance(), 260, 20);
     }
 
     //easy math problems (difficulty=0)

@@ -20,11 +20,11 @@ public class MathGameTask extends BukkitRunnable {
     private Location loc;
     private String name;
 
-    public MathGameTask(JavaPlugin plugin, Player player, int difficulty, int time) {
+    public MathGameTask(JavaPlugin plugin, Player player, int difficulty) {
         this.plugin = plugin;
         this.player = player;
         this.difficulty = difficulty;
-        this.time = 10;
+        time = 90;
         spawnTime = 5;
     }
 

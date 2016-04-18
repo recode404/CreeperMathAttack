@@ -13,14 +13,14 @@ import org.bukkit.entity.Player;
 public class CommandPlay implements CommandExecutor {
 
     private Player player;
-    private int difficulty, time;
+    private int difficulty;
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         //set defaults
         player = (Player) sender;
         difficulty = 0;
-        time = 60;
+
 
         //player already in game
         if (player.getLevel() == 1) {
@@ -37,18 +37,9 @@ public class CommandPlay implements CommandExecutor {
             }
         }
 
-        //time check
-        if (args.length > 1) {
-            time = Integer.parseInt(args[1]);
-            if (time < 30 || time > 180) {
-                player.sendMessage(ChatColor.RED + "Invalid time. Time must be between 30 and 180.");
-                return false;
-            }
-        }
-
         //start game and set player to playing
         player.setLevel(1);
-        new MathGame(player, difficulty, time).start();
+        new MathGame(player, difficulty).start();
         return true;
     }
 }
